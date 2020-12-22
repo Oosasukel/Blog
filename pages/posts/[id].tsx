@@ -8,7 +8,6 @@ import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import DisqusComments from '../../services/Discus';
 
 interface CodeBlockProps {
   value: string;
@@ -38,7 +37,6 @@ export default function Post({ postData }) {
           source={postData.matterResult.content}
           renderers={{ code: CodeBlock }}
         />
-        <DisqusComments post={{ id: postData.id, title: postData.title }} />
       </article>
     </Layout>
   );

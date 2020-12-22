@@ -2,11 +2,16 @@ import Head from 'next/head';
 import styles from '../styles/components/layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+
+import DisqusComments from '../services/Discus';
 
 const name = 'Rodrigo Gonçalves';
 export const siteTitle = 'RodrigoG';
 
 export default function Layout({ children, home = false }) {
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -47,11 +52,17 @@ export default function Layout({ children, home = false }) {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
-          <Link href='/'>
-            <a>← Voltar para o início</a>
-          </Link>
-        </div>
+        <>
+          <div className={styles.backToHome}>
+            <Link href='/'>
+              <a>← Voltar para o início</a>
+            </Link>
+          </div>
+
+          <DisqusComments
+            post={{ id: router.pathname, title: router.query.id as string }}
+          />
+        </>
       )}
     </div>
   );
