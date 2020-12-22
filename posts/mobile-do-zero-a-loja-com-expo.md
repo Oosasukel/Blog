@@ -55,7 +55,7 @@ cd my-app
 
 Com o template "blank" serão criados esses arquivos:
 
-![https://rodrigog.com.brhttps://rodrigog.com.br/images/posts/mobiledozeroalojacomExpo/Untitled1.png](https://rodrigog.com.br/images/posts/mobiledozeroalojacomExpo/Untitled1.png)
+![https://rodrigog.com.br/images/posts/mobiledozeroalojacomExpo/Untitled1.png](https://rodrigog.com.br/images/posts/mobiledozeroalojacomExpo/Untitled1.png)
 
 O arquivo **App.js** é o inicial onde vamos começar nossa aplicação:
 
