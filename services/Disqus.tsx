@@ -10,7 +10,7 @@ interface DisqusCommentsProps {
 const DisqusComments = ({ post }: DisqusCommentsProps) => {
   const disqusShortname = 'rodrigog';
   const disqusConfig = {
-    url: `http://localhost:3000/posts/${post.id}`,
+    url: `${process.env.NEXT_PUBLIC_BASE_URL}/posts/${post.id}`,
     identifier: post.id,
     title: post.title,
   };

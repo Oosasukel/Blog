@@ -6,7 +6,7 @@ import { tomorrow } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
-import Layout from '../../components/layout';
+import LayoutPost from '../../components/layoutPost';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
 interface CodeBlockProps {
@@ -24,7 +24,7 @@ const CodeBlock: NextPage<CodeBlockProps> = ({ value, language }) => {
 
 export default function Post({ postData }) {
   return (
-    <Layout>
+    <LayoutPost id={postData.id} title={postData.title}>
       <Head>
         <title>{postData.title}</title>
       </Head>
@@ -34,11 +34,11 @@ export default function Post({ postData }) {
           <Date dateString={postData.date} />
         </div>
         <ReactMarkdown
-          source={postData.matterResult.content}
+          source={postData.content}
           renderers={{ code: CodeBlock }}
         />
       </article>
-    </Layout>
+    </LayoutPost>
   );
 }
 
